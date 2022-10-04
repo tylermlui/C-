@@ -1,0 +1,198 @@
+/*
+   Programmer:Tyler Lui
+   Program Name: Monthly Budget Report
+   Date: 5/2/2022
+   Version: Week 7 HW
+   Description: Uses structures to create report of a monthly budget and calculates wether the budget is over or under.      
+                              
+*/
+#include<iostream>
+using namespace std;
+struct Budget //structure declared
+{
+    float Housing;
+    float Utilities;
+    float HouseholdExpense;
+    float Transportation;
+    float Food;
+    float Medical;
+    float Insurance;
+    float Entertainment;
+    float Clothing;
+    float Miscellaneous;
+};
+void GetBudget(Budget&); 
+
+void DisplayReport(Budget);
+
+
+int main()
+
+{
+
+    Budget MonthlyBudget; //passing structure to function 
+
+    GetBudget(MonthlyBudget);
+
+    DisplayReport(MonthlyBudget);  //Displaying the Report
+
+    system("pause");
+
+    return 0;
+
+}
+
+void GetBudget(Budget& b) //function definitions
+
+{
+	cout << "Please enter how much have you spent on the following this month:" <<endl;
+	cout << "Housing: "<<endl;
+	cin  >> b.Housing;
+	
+	cout << "Utilities:"<<endl;
+	cin  >> b.Utilities;
+	
+	cout << "Household Expenses: "<<endl;
+	cin  >> b.HouseholdExpense;
+	
+	cout << "Transportation: "<<endl;
+	cin  >> b.Transportation;
+	
+	cout << "Food: " <<endl;
+	cin  >> b.Food;
+	
+	cout << "Medical: "<<endl;
+	cin  >> b.Medical;
+	
+	cout << "Insurance: "<<endl;
+	cin  >> b.Insurance;
+	
+	cout << "Entertainment: "<<endl;
+	cin  >> b.Entertainment;
+	
+	cout << "Clothing: "<<endl;
+	cin  >> b.Clothing;
+	
+	cout << "Miscellaneous: ";
+	cin  >> b.Miscellaneous;
+}
+
+void DisplayReport(Budget b)
+
+{
+
+    float difference, Total;
+
+    cout << "-=-REPORT-=-" << endl;
+
+    difference = 500 - b.Housing;
+
+    if (difference >= 0) //checking conditions for each member of structure
+
+        cout << "Housing Expenses is under Budget" << endl;
+
+    else if (difference < 0)
+
+        cout << "Housing Expenses is over Budget" << endl;
+
+    difference = 150 - b.Utilities;
+
+    if (difference >= 0)
+
+        cout << " Utilities Expenses is under Budget" << endl;
+
+    else if (difference < 0)
+
+        cout << " Utilities Expenses is over Budget" << endl;
+
+    difference = 65 - b.HouseholdExpense;
+
+    if (difference >= 0)
+
+        cout << "HouseHold Expenses is under Budget" << endl;
+
+    else if (difference < 0)
+
+        cout << "HouseHold Expenses is over Budget" << endl;
+
+    difference = 50 - b.Transportation;
+
+    if (difference >= 0)
+
+        cout << "Transportation Expenses is under Budget" << endl;
+
+    else if (difference < 0)
+
+        cout << "Transportation Expenses is over Budget" << endl;
+
+    difference = 250 - b.Food;
+
+    if (difference >= 0)
+
+        cout << "Food Expenses is under Budget" << endl;
+
+    else if (difference < 0)
+
+        cout << "Food Expenses is over Budget" << endl;
+
+    difference = 30 - b.Medical;
+
+    if (difference >= 0)
+
+        cout << "Medical Expenses is under Budget" << endl;
+
+    else if (difference < 0)
+
+        cout << "Medical Expenses is over Budget" << endl;
+
+    difference = 100 - b.Insurance;
+
+    if (difference >= 0)
+
+        cout << "Insurence Expenses is under Budget" << endl;
+
+    else if (difference < 0)
+
+        cout << "Insurence Expenses is over Budget" << endl;
+
+
+    difference = 150 - b.Entertainment;
+
+    if (difference >= 0)
+
+        cout << "Entertainment Expenses is under Budget" << endl;
+
+    else if (difference < 0)
+
+        cout << "Entertainment Expenses is over Budget" << endl;
+
+
+    difference = 75 - b.Clothing;
+
+    if (difference >= 0)
+
+        cout << "Clothing Expenses is under Budget" << endl;
+
+    else if (difference < 0)
+
+        cout << "Clothing Expenses is over Budget" << endl;
+
+
+    difference = 50 - b.Miscellaneous;
+
+    if (difference >= 0)
+
+        cout << "Miscellaneous Expenses is under Budget" << endl;
+
+    else if (difference < 0)
+
+        cout << "Miscellaneous Expenses is over Budget" << endl;
+
+    Total = b.Clothing + b.Entertainment + b.Food + b.HouseholdExpense + b.Housing + b.Insurance + b.Medical + b.Transportation     //Total budget evaluated
+        + b.Utilities + b.Miscellaneous;
+    
+    if (Total > 1420) //checks the entire monthly budget if it is over or under
+        cout << "Monthly Expenses are over the Budget" << endl;
+    else
+        cout << "Monthly Expenses are under the Budget" << endl;
+}
