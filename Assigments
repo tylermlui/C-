@@ -1,0 +1,40 @@
+/*
+   Programmer:Tyler Lui
+   Program Name: Pattern A and B stars
+   Date: 4/10/2022
+   Version:Lab Assignment_TylerLui
+   Description: Prints pattern A and B of stars
+ 
+*/
+#include <iostream>
+using namespace std;
+
+int main()
+{
+int m=10;
+int x=0;
+//declaring maximum and minumum
+string spaces= " ";
+cout <<"Pattern A "<<endl;
+// nested for loop 
+for(int a=x; a<m ; a++)
+{
+    for(int b=x; b<=a; b++)
+    {
+     cout<<"+"; 
+    }
+    cout<< endl;
+}
+
+cout<<"Pattern B "<< endl;
+
+    for(int a=x; a<m; a++)
+    {
+     for(int b=m; b>a; b--)
+    {
+        cout<< "+";
+    }
+    cout<<endl;
+    }
+ 
+}
