@@ -1,0 +1,37 @@
+/*
+   Programmer:Tyler Lui
+   Program Name: Sum of Numbers 
+   Date:3/27/2021
+   Version:1.6
+   Description:This program takes the user's inputted value and calculates the sum of all the numbers up to that value    
+                              
+*/
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    //initializing variables 
+    int value;
+    int sumValue = 0;
+    //initializing counter
+    int counter = 1;
+
+    cout<<"Enter a postive integer value"<< endl;
+    //storing user input
+    cin>> value;
+    //using loop to only continue the code when it has a positive integer
+    while(value<0)
+    {
+        cout<<"Please enter a positive integer value";
+        cin>> value;
+    }
+    //using while loop to get the sum of each number entered by the user in "value"
+    while(counter <= value)
+    {
+        sumValue= sumValue+counter;
+        counter = counter +1;
+    }
+    cout<<"The sum of this value is: "<< sumValue << endl;
+}
