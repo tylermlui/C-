@@ -1,0 +1,52 @@
+/*
+   Programmer:Tyler Lui
+   Program Name: Mortgage with array
+   Date:4/18/2022
+   Version:
+   Description: Calculates the mortgage using arrays    
+                              
+*/
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+    int loanChoice;//declaring the choice variable
+    double rate,loanAmount,mortgagePayment;//input and payment variable
+    double loanTerm[]{48,180,360};//loan term array
+    double loanRate[]{5.35,5.5,5.75};//creating the loan rate array;
+   for(int i=1;i>0;i++)// loop to show display the loan types
+    {
+    cout<<"Select the mortgage loan type you would like "<< endl;
+    cout<<"1. 7 year at 5.35% "<< endl;
+    cout<<"2. 15 year at 5.5% "<< endl;
+    cout<<"3. 30 year at 5.75% "<< endl;
+    cin>>loanChoice;// storing the choice of loan
+    cout<<"Please enter the loan amount : "; 
+    cin>>loanAmount;  //input loan amount
+    
+    if(loanChoice==1)
+    { 
+       rate = (loanRate[0]/100) / 12; //rate over each month
+      mortgagePayment=loanAmount*rate/(1-pow(1+rate,-loanTerm[0]));//mortgage calculation
+      cout<<"You Pay: "<<mortgagePayment<<endl;
+      
+    }else if(loanChoice==2)
+    
+    {
+      rate = (loanRate[1]/100) / 12;   
+      mortgagePayment = loanAmount*rate/(1-pow (1+ rate,-loanTerm[1]));  /
+      cout<<"You pay : "<<mortgagePayment<<endl;
+       
+    }else if(loanChoice==3)
+    {
+      rate = (loanRate[2]/100) / 12;    
+      mortgagePayment = loanAmount*rate/(1-pow(1 + rate,- loanTerm[2]));  
+      cout<<"You pay : "<<mortgagePayment<<endl;
+    }else
+      cout<<"please choose again";
+
+    }
+    return 0;
+}
