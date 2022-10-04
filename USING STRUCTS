@@ -1,0 +1,55 @@
+/*
+   Programmer:Tyler Lui
+   Program Name: Movie Data
+   Date: 5/2/2022
+   Version: Week 7 Lab Assignment
+   Description:  Uses Structures to display movie data      
+                              
+*/
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct MovieData //creating struct
+{
+	string title,
+	       director; //delcaring variables
+	double yearReleased;
+	double runTime;
+
+	MovieData(string movieName, string directorName, double movieYear, double movieTime) //passing values through
+	{	
+		title = movieName;
+		director = directorName;
+		yearReleased = movieYear; 
+		runTime = movieTime;
+	}
+};
+
+void movieInfo(MovieData); //creating movie data
+
+int main()
+{
+	MovieData MovieA("Cars", "John Lasseter", 2006, 117); 
+	
+	MovieData MovieB("Finding Nemo", "Andrew Santon", 2003, 100);
+	
+	movieInfo(MovieA); //storing movieinfo from movie created in A and B 
+	
+	movieInfo(MovieB);
+	return 0;
+}
+
+void movieInfo(MovieData MV) //displaying movie info
+{
+	cout << "      Movie information" << endl;
+	
+	cout << "Title:         " << MV.title << endl;
+	
+	cout << "Directed By:   " << MV.director << endl;
+	
+	cout << "Year Released: " << MV.yearReleased << endl;
+	
+	cout << "Run Time:      " << MV.runTime << endl;
+}
