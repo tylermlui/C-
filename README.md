@@ -1,2 +1,2 @@
 # M125 CPP
-Code for different assignments in my C++ class
+My code for assignments in my M125 C++ class
