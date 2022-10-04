@@ -1,0 +1,34 @@
+/*
+   Programmer:Tyler Lui
+   Program Name: Array with Cube of integers using pointers
+   Date: 4/24/2022
+   Version: HW Assignment_TylerLui
+   Description:Cubes values from 1 to a given value using an array and pointers       
+                              
+*/
+#include <iostream>
+
+using namespace std;
+
+int*cube(int size)
+{
+int*arr = new int[size]; // array for size 
+for(int num=1 ;num <= size; num++) //for loop to cube values starting at 1
+{
+arr[num-1] = num*num*num; //cubes values from 1 up to inputted value
+}
+ return arr;// return the pointer to array
+}
+
+int main()// main function
+{
+int size; //declaring size of array variable
+cout<<"Enter the size of the array: "; 
+cin>>size; //gets and stores input from user
+int *arr = cube(size); //writes to the pointer and changes value to size user inputted
+for(int num=0;num <size; num++) //for loop to display cubed values
+{
+cout<<arr[num]<<endl; //Displays the array 
+}
+return 0;
+}
